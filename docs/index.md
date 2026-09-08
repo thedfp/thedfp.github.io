@@ -113,11 +113,13 @@ Other one-time or time-boxed expenses may inflence your budget projections. Agai
 
 Your spending is the money going out the door. This does not include taxes. Your taxes are the costs associated with generating the "income" needed to supply the cash for the spending. These include: 
 
-- Ordinary Income Taxes
-- State Income Taxes
-- Capital Gains Taxes
-- Net Investment Income Tax (NIIT)
-- IRMAA surcharges
+| Tax Type | Structure | Description & Key Mechanism |
+| :--- | :--- | :--- |
+| **Ordinary Income Taxes** | **Marginal** | Federal income tax brackets range from 10% to 37%. Tax rates apply only to the portion of income within each specific bracket, not to your entire income. |
+| **State Income Taxes** | **Marginal** *(Mostly)* | Most states with an income tax utilize progressive marginal brackets. A few states use a single **flat rate**, and specific state exemptions/credits can occasionally introduce localized cliff effects. |
+| **Capital Gains Taxes** | **Marginal** | Long-term capital gains rates (0%, 15%, 20%) are structured marginally based on taxable income thresholds. Short-term capital gains are taxed as ordinary income (also marginal). |
+| **Net Investment Income Tax (NIIT)** | **Phase-in / Hybrid** | A 3.8% tax applied to the *lesser* of net investment income OR the amount of MAGI exceeding the threshold ($200,000 single / $250,000 MFJ). Because it applies only to the excess over the threshold, it prevents a hard cliff. |
+| **IRMAA Surcharges** | **Cliff** | Medicare Part B and Part D premium surcharges use strict income tiers based on MAGI from two years prior. Earning **$1 over** a tier threshold triggers the full surcharge rate across the entire year. |
 
 Additionally, we want a flexible budget because we will need to flex with the portfolio. Especially during years when the market is down, we want to leave our growth positions such as our equity positions alone while they are in a depressed state. Having to sell equities during down years at a low value does significant damage to the long term viability of the plan. Therefore we want to be able to flex with the market. If the market is down, our spending should follow suit. If the market comes back up, so can our spending. Our spending guardrails in combination with our bucket strategy will allow our equity growth positions to remain untouched at their most vulnerable. 
 
