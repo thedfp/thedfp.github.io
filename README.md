@@ -8,5 +8,6 @@ mkdocs new .
 ```
 
 ```shell
+source .venv/bin/activate
 mkdocs serve --livereload
 ```

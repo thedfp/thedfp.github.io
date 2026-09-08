@@ -22,10 +22,7 @@ Because you held the shares for over a year, your sales qualify for long-term ca
 * The **0% federal capital gains tax threshold** is projected at **$102,100** of taxable income.
 * The **standard deduction** for MFJ in 2027 is projected at **$33,200**.
 
-This creates a tax-free income shelter for long-term capital gains:
-
-
-$$\text{Taxable Threshold} + \text{Standard Deduction} = \$102,100 + \$33,200 = \mathbf{\$135,300}$$
+Stack those together and you get a tax-free shelter for long-term capital gains of **$102,100 + $33,200 = $135,300**.
 
 Since your maximum possible gain from selling $120,000 of VTI is **$120,000** (which is less than $135,300), your taxable long-term capital gains fall entirely within the **0% federal tax bracket**.
 

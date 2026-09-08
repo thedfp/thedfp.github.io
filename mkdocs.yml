@@ -1,4 +1,9 @@
-site_name: The DFP
+site_name: The Digital Financial Planner
 site_url: https://thedfp.github.io
 theme:
   name: material
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
