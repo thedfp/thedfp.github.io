@@ -1,0 +1,4 @@
+site_name: The DFP
+site_url: https://thedfp.github.io
+theme:
+  name: material
