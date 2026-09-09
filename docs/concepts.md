@@ -279,4 +279,56 @@ While equity funds capture global economic growth, bond funds provide income and
 
 A balanced retirement portfolio using broad-market equity and bond funds pairs inflation-beating growth with downside protection. Using pooled funds for both asset classes transforms uncompensated individual risks into reliable, broad-based market participation.
 
+Affordable Care Act (ACA) subsidies are federal financial assistance designed to make health insurance purchased through HealthCare.gov or state-based Marketplaces affordable for individuals and families without access to affordable employer coverage, Medicare, or Medicaid.
+
+---
+
+## ACA - The Two Types of Subsidies
+
+The ACA offers two distinct forms of financial support:
+
+**1. Premium Tax Credit (PTC)**
+
+* **What it does:** Lowers your monthly health insurance premium.
+* **How it works:** When enrolling, you estimate your annual income. You can choose to have the government pay this credit directly to your insurance company each month as an **Advance Premium Tax Credit (APTC)**, which directly reduces your monthly bill.
+* **Flexibility:** Can be applied toward any Marketplace plan tier—Bronze, Silver, Gold, or Platinum.
+
+**2. Cost-Sharing Reductions (CSR)**
+
+* **What it does:** Lowers your out-of-pocket medical costs (deductibles, copays, coinsurance, and annual out-of-pocket maximums).
+* **How it works:** Extra savings are automatically built into the plan design.
+* **Key restriction:** You **must** enroll in a plan at the **Silver** metal level to receive CSR discounts.
+
+---
+
+### How Subsidy Amounts Are Calculated
+
+Subsidies are calculated based on your household's expected **Modified Adjusted Gross Income (MAGI)** relative to the **Federal Poverty Level (FPL)** and local insurance costs.
+
+1. **Benchmark Plan Baseline:** The government calculates the local cost of the **second-lowest-cost Silver plan** (known as the "benchmark plan") available to your household.
+2. **Maximum Income Contribution:** Based on your income relative to the FPL, the ACA determines the maximum percentage of income you should have to pay for that benchmark plan.
+3. **The Credit Formula:** Premium Tax Credit = Benchmark Plan Premium - Maximum Expected Contribution
+
+If the benchmark plan costs $500/month and your expected contribution based on income is $100/month, your tax credit is $400/month. You can apply that $400 subsidy to a cheaper Bronze plan (potentially making the monthly premium $0) or a more expensive Gold plan.
+
+---
+
+### Eligibility Requirements
+
+To qualify for ACA subsidies, you must meet the following criteria:
+
+* **Income Limits:** Generally available to households earning between 100% and 400% of the FPL.
+* **No Alternative Coverage:** You cannot have access to "affordable" employer-sponsored coverage or qualify for Medicare/Medicaid.
+* **Tax Filing:** If married, you must file a joint tax return to claim the tax credit.
+* **Marketplace Purchase:** Plans must be bought through the official federal or state health insurance exchange.
+
+---
+
+### Year-End Tax Reconciliation
+
+Because APTCs are based on an advance *estimate* of your annual income, your actual subsidy eligibility is reconciled when you file your federal tax return (using **IRS Form 8962**):
+
+* **If you earned less than estimated:** You will receive the remaining credit balance as part of your tax refund.
+* **If you earned more than estimated:** You may have to repay some or all of the excess tax credits you received.
+
 Now that we understand the concepts, let's move on to the [plan](plan.md). 
