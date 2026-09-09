@@ -1,9 +1,36 @@
 site_name: The Digital Financial Planner
 site_url: https://thedfp.github.io
+
 theme:
   name: material
+  features:
+    - navigation.top       # back-to-top button — the main fix for a long scroll
+    - navigation.tracking  # URL updates to the active section as you scroll
+    - toc.follow           # TOC auto-scrolls to keep the active section visible
+    - search.highlight
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 markdown_extensions:
+  - abbr
   - admonition
+  - attr_list
+  - md_in_html
+  - tables
   - pymdownx.details
   - pymdownx.superfences
-  - tables
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - toc:
+      permalink: true

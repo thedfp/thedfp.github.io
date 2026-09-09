@@ -61,6 +61,49 @@ So many people don't understand marginal tax rates. They think that if you make 
 
 This person's effective tax rate is 17.8%, not 24% even though they make enough to be in that "bracket".
 
+### Account Types
+
+How much you have matters. Where you keep it matters just as much. Every account type carries its own rules about how money goes in, how it comes out, and when you are allowed to touch it without a penalty.
+
+| Account Type       | Contributions | Withdrawals            | MAGI | Early Withdrawal                        | RMDs |
+| ------------------ | ------------- | ---------------------- | ---- | --------------------------------------- | ---- |
+| Checking / Savings | Posttax       | Not taxed              | No   | None                                    | No   |
+| Brokerage          | Posttax       | Capital gains          | Yes  | None                                    | No   |
+| 401k / 403b        | Pretax        | Ordinary               | Yes  | 59.5, or 55 on separation               | Yes  |
+| Roth 401k / 403b   | Posttax       | Tax-exempt             | No   | 59.5, or 55 on separation               | No   |
+| 457(b)             | Pretax        | Ordinary               | Yes  | Any age on separation                   | Yes  |
+| Traditional IRA    | Pretax        | Ordinary               | Yes  | 59.5                                    | Yes  |
+| SEP / SIMPLE IRA   | Pretax        | Ordinary               | Yes  | 59.5                                    | Yes  |
+| Roth IRA           | Posttax       | Tax-exempt             | No   | Contributions anytime, earnings at 59.5 | No   |
+| HSA                | Pretax        | Tax-exempt for medical | No   | Medical anytime, otherwise 65           | No   |
+
+A few of these carry conditions that a single row cannot capture.
+
+- **HSA**: Withdrawals are tax-exempt for qualified medical expenses at any age. Non-qualified withdrawals before 65 are ordinary income plus a 20% penalty, and after 65 they are ordinary income with no penalty.
+- **Traditional IRA**: Contributions are only deductible if your income is below the phase-out, and the phase-out depends on whether you or your spouse are covered by a workplace plan.
+- **Roth IRA**: Contributions can come out at any time tax-free and penalty-free. Earnings need both age 59.5 and the five year clock.
+- **SIMPLE IRA**: The early withdrawal penalty is 25% rather than 10% during your first two years in the plan.
+
+This is why your retirement date drives which accounts you need. Retire at 55 and a brokerage account does the heavy lifting for years before your 401k opens up without a penalty. Retire at 67 and that gap never exists.
+
+### Required Minimum Distributions
+
+**Required Minimum Distributions (RMDs)** are mandatory withdrawals that the IRS requires you to take each year from tax-deferred retirement accounts once you reach a certain age.
+
+Because traditional retirement accounts allow your contributions and investment earnings to grow tax-deferred for decades, the government uses RMDs to ensure it eventually collects income tax on those funds.
+
+- **Starting age**: 73 for participants born between 1951 and 1959, and 75 for those born in 1960 or later.
+- **Accounts subject to RMDs**: Traditional, SEP and SIMPLE IRAs, along with 401(k), 403(b) and 457(b) plans.
+- **Accounts exempt**: Roth IRAs are exempt for the original owner, and Roth 401(k)s became exempt during your lifetime starting in 2024.
+- **Calculation method**: Your account balance as of December 31 of the previous year, divided by a life expectancy factor from the IRS Uniform Lifetime Table.
+- **Deadlines**: Your first RMD is due by April 1 of the year after you reach your starting age. Every one after that is due by December 31.
+- **Penalty**: RMDs are taxed as ordinary income. Missing one draws a 25% excise tax on the amount you failed to withdraw, reduced to 10% if you correct it promptly.
+
+Two strategies come up over and over for managing them.
+
+- **Roth conversions**: Converting pretax funds to a Roth before your starting age reduces the tax-deferred balance, which shrinks every future required distribution.
+- **Qualified charitable distributions**: From age 70.5 you can send money directly from a Traditional IRA to a qualified charity, up to an annually indexed limit. It satisfies the RMD and stays out of your taxable income entirely.
+
 ### Sequence of Returns Risk
 
 **Sequence of returns risk** (or sequence risk) is the danger that the timing of market downturns will negatively impact the total value of your portfolio, specifically when you are withdrawing money in early retirement.
@@ -141,20 +184,7 @@ Remember the buckets are logical, not account-based. Your cash might be in a che
 
 Additionally, these buckets can also be much more aggressive. There are some opinions that only 2 buckets are needed: Cash bucket with 6 months in checking and 18 months in [SCHP](https://www.schwabassetmanagement.com/products/schp) and a Growth bucket for the rest in [VTI](https://investor.vanguard.com/investment-products/etfs/profile/vti). And if additional funds are needed for a downturn, only sell VTI in small chunks (think 2 months of spend) if the recovery takes longer than 2 years.
 
-## The Model
-
-The model has inputs and the model has outputs. The plan inputs are:
-
-- Economic Information
-- Participants and Household Information
-
-### Participants
-
-Modeling is built around 1 or 2 participants. Dependents are included for tax and ACA subsidy calculation purposes.
-
-- Tax Filing Status (Single, Married Filing Jointly)
-
-### Budget
+### Building a Retirement Budget
 
 Budgets are flexibly modeled around three industry standard phases of retirement.
 
@@ -187,7 +217,7 @@ Other one-time or time-boxed expenses may influence your budget projections. Aga
 
 ### Taxes
 
-Your spending is the money going out the door. This does not include taxes. Your taxes are the costs associated with generating the "income" needed to supply the cash for the spending. These include:
+Your budget is the money going out the door. This does not include tax obligations generated when selling assets to fund your spending. Your taxes are the costs associated with generating the "income" needed to supply the cash for the spending. These include:
 
 | Tax Type                         | Structure         | Description & Key Mechanism |
 | -------------------------------- | ----------------- | --- |
@@ -199,52 +229,227 @@ Your spending is the money going out the door. This does not include taxes. Your
 
 Additionally, we want a flexible budget because we will need to flex with the portfolio. Especially during years when the market is down, we want to leave our growth positions such as our equity positions alone while they are in a depressed state. Having to sell equities during down years at a low value does significant damage to the long term viability of the plan. Therefore we want to be able to flex with the market. If the market is down, our spending should follow suit. If the market comes back up, so can our spending. Our spending guardrails in combination with our bucket strategy will allow our equity growth positions to remain untouched at their most vulnerable.
 
+Part of the plan is to try not to pay taxes. The other part is that if you have to pay taxes, pay as little as possible. The other other part is to look for opportunities to pay less in taxes now if you are expecting to pay more in taxes later (Roth conversions).
+
+## The Plan
+
+The plan has inputs and outputs. The plan inputs are:
+
+- **Economic Information**: expected inflation, returns, etc.
+- **Participants**: who, ages, and household information such as tax filing status
+- **Accounts**: what accounts, where, what type, how much is in them in what positions and how much we are planning to add
+- **Budget**: how much are planning to spend
+
+There are also some assumptions:
+
+- Contributions to retirement cease when you retire
+- Capital gains should always be long term. Always hold everything at least a year in taxable accounts.
+- Monte Carlo results should be greater than 90% for a plan to be viable
+
+### Economic Information
+
+- **Inflation**: Used for calculating nominal values for non-healthcare costs
+- **Healthcare Inflation**: Used for calculating nominal values for healthcare costs
+- **Cost-of-Living Adjustment (COLA)**: Used for Medicare's adjustments for inflation
+- **Tax Rates**
+    - **Ordinary Income Tax**
+    - **State Income Tax**
+    - **Long Term Capital Gains Tax**
+    - **Net Investment Income Tax**
+    - **IRMAA Surcharges**
+
+Some of these items will be able to be modeled for a plan. Some are baseline economic data that is what it is.
+
+### Participants
+
+Let's start with the people. Who's involved and what are some basic household facts. There's either one or two people.
+
+- Participant(s)
+    - Name
+    - Date of Birth
+    - Retirement Date
+    - Life Expectancy
+- Dependent(s)
+    - Name
+    - Date of Birth
+    - Expected End of Dependency
+- Household
+    - Tax Filing Status (Single, Married Filing Jointly)
+    - Where - City, State, Zip (Used for ACA subsidy calculations and state income tax impacts)
+
+### Budget
+
+Budgets should be annual and should be thoughtfully created. Remember, there are some expenses that may change dramatically when you cross certain age milestones - medicare being the biggest. You may go from paying full freight ACA marketplace health insurance for 3 or 4 people (~30-40k per year in Texas) to paying for medicare for 2 (~10k). You may also plan on traveling like mad people for the first 5-7 years and then dialing it back expecting possible grandchildren to be the focus. Don't just slap a number down and throw some inflation numbers at it. Put some thought into it.
+
+One other piece of advice: round up. It's always better to have money allocated and not need it than to need it and not have it in the budget.
+
+For every year from retirement until life expectancy of last participant:
+
+- Year
+- Total - Required + Discretionary
+- Required - Base Living Expenses + Healthcare
+- Healthcare Premiums - Just the premiums (we need these for modeling ACA subsidies)
+- Healthcare Out of Pocket - We also want these because healthcare inflation is a different rate than regular inflation (higher, unfortunately)
+
+p.s. Don't buy the boat.
+
 ### Financials
 
 Where you are today and how much you are contributing to your retirement.
 
 #### Accounts
 
+Accounts are where the money actually lives. The model needs enough detail per account to answer three questions: what is it worth, what does it cost in taxes to get money out of it, and when is that money legally available.
+
+Most of that is not something you enter. The tax behavior falls out of the account type, which the model looks up from [Account Types](#account-types) rather than asking you to fill it in and get it wrong. That leaves a much shorter list of things that are actually yours to enter.
+
 For each account:
 
-- Account Type (checking, brokerage, 401k, Roth 401k, Traditional IRA, Roth IRA, HSA, 403b, etc)
-- Contribution Tax Treatment (pretax, posttax)
-- Withdrawal Tax Treatment (ordinary, tax-exempt, capital gains)
-- Modified Adjusted Gross Income Treatment
-- Balance
+- Account Name
+- Account Type
+- Owner (participant 1, participant 2, joint)
 - Annual Contribution Amount
+- Employer Match (employer plans only)
+- Retired From This Employer (401k and 403b only)
 - Position(s)
-    - Asset
-    - Value
-    - Lot(s)
+
+Owner matters more than it looks. Every age threshold in the budget section applies to a person, not a household. In a two participant plan, the same account type can be penalty-free for one spouse and locked to the other for years.
+
+Retired From This Employer is the one piece the type cannot tell you. The rule of 55 only applies to the plan at the employer you actually separated from in or after the year you turn 55. Two identical 401ks, same owner, same age, and only one of them is available without a penalty.
+
+For each position:
+
+- Symbol
+- Asset Class (equities, bonds, TIPS, cash)
+- Bucket (cash, stable, growth)
+- Shares
+- Current Price
+- Dividend Yield
+- Dividend Treatment (qualified, non-qualified)
+- Expense Ratio
+- Lot(s)
+
+Asset class is what connects a position to the expected returns in your plan. Bucket is the logical assignment from the three bucket system, and it is what tells the model which positions it is allowed to sell in a down year.
+
+Dividends need their own treatment because they arrive whether you want them or not. Qualified dividends are taxed at capital gains rates and stack into the same 0% bracket you are trying to fill with sales, so they can quietly push a tax-free withdrawal plan into the 15% bracket.
+
+For each lot:
+
+- Quantity
+- Acquisition Date
+- Cost Basis
+
+Lots only matter in taxable accounts. In a 401k or traditional IRA, everything that comes out is ordinary income no matter what you paid for it, so there is nothing worth tracking. In a brokerage account the acquisition date decides whether a sale is long-term or short-term, and the cost basis decides how much of the sale is taxable at all.
+
+You do not tell the model which lots to sell. That is the whole reason to track them individually. Two lots of the same fund bought years apart produce completely different tax bills for the same dollar of spending, so the model picks the lots as part of solving the year.
+
+A position's share count and market value are both derived from its lots rather than stored on their own. Balance is only entered directly for accounts that hold no positions, like checking. Storing the same number in two places is how the two drift apart.
 
 #### Annuities and Pensions
 
+Pensions and annuities are income streams, not balances. You do not draw them down, you receive them, which makes them behave more like a paycheck than an account. Their job in the model is to reduce how much the portfolio has to produce.
+
+For each income stream:
+
+- Name
+- Owner (participant 1, participant 2)
+- Type (pension, immediate annuity, deferred annuity, QLAC)
+- Start Age
+- Annual Amount
+- Real or Nominal (whether the amount above is in today's dollars)
+- Cost of Living Adjustment (none, fixed percentage, tied to inflation)
+- Tax Treatment (ordinary, partially taxable, tax-exempt)
+- Modified Adjusted Gross Income Treatment
+- Survivor Benefit (percentage that continues to a surviving spouse)
+- Duration (life, joint life, period certain)
+- Cost Basis (non-qualified annuities only)
+- Lump Sum Option (pensions only)
+
+The cost of living adjustment is the field that quietly decides whether the income is worth what it looks like. Most private pensions and most fixed annuities have no COLA at all. A $36,000 a year pension with no adjustment still pays $36,000 in thirty years, but at 3% inflation that is worth about $14,800 in today's dollars. It is the same number on the check and 41% of the groceries. This is exactly the real versus nominal problem, and it is why the model needs to know which kind of dollars the amount is stated in.
+
+Taxation depends on where the money came from. A pension funded with pretax dollars and a qualified annuity held inside an IRA are both fully ordinary income. A non-qualified annuity bought with money you already paid tax on is different: each payment is part return of your own principal, which is not taxed, and part earnings, which are. That split is the exclusion ratio, and it needs the cost basis to calculate. Once the basis is used up, the payments become fully taxable.
+
+Survivor benefit matters more in a two participant plan than most people expect. A pension that pays $60,000 while both spouses are alive and nothing afterward creates a cliff on the first death, at the same moment the household drops to single filer tax brackets. A 50% survivor election lowers the payment now to avoid that cliff later, and the model should be able to show you both versions.
+
+Guaranteed income also changes how the guardrails behave. Guardrails are calculated on the portfolio withdrawal rate, so income that arrives regardless of the market means the portfolio has less work to do and a market drop cuts a smaller number. If pensions and Social Security together cover your required budget, the floor aware rule is satisfied no matter what the market does, which is the most robust position a plan can be in.
+
 #### Social Security
 
-### Plan
+Social Security is guaranteed income like a pension, but it gets its own section because two parts of it are model machinery rather than data entry: when you claim it, and how much of it is taxable.
 
-#### Required Economic Values
+For each participant:
 
-- Expected Inflation
-- Expected Returns for Asset Classes (equities, bonds, etc)
-- Marginal Tax Rates (brackets, income, percent)
-- Capital Gains Tax Rates (year_through, percent, tax filing status, income)
-- IRMAA
-- Social Security Calculations
+- Primary Insurance Amount (the monthly benefit at full retirement age)
+- Full Retirement Age
+- Claiming Age
+- Earnings History (only if the model computes the PIA instead of taking it from your statement)
+- Spousal Benefit Eligibility
+- Survivor Benefit Assumption
 
-#### Calculation Strategies
+The Primary Insurance Amount is the anchor. It is what you would receive at full retirement age, it comes straight off your Social Security statement, and every other number is a percentage of it. Claiming early permanently reduces it and claiming late permanently increases it. For a full retirement age of 67:
 
-- Linear
-- Guardrails
+| Claiming Age | Benefit |
+| ------------ | ------- |
+| 62           | 70.0%   |
+| 63           | 75.0%   |
+| 64           | 80.0%   |
+| 65           | 86.7%   |
+| 66           | 93.3%   |
+| 67           | 100.0%  |
+| 68           | 108.0%  |
+| 69           | 116.0%  |
+| 70           | 124.0%  |
+
+Claiming age is not really an input. It is one of the most valuable decisions in the whole plan, and it belongs with the other solved decisions. Delaying means spending down the portfolio to bridge the gap, which looks bad in isolation, but what you buy with it is a larger stream of income that is adjusted for inflation every year and lasts as long as you do. Unlike almost every private pension, Social Security has a real COLA, so the erosion problem does not apply to it.
+
+Taxation works differently than everything else on this page and catches people off guard. You do not simply add the benefit to your income. Instead you calculate provisional income, which is your other income plus tax-exempt interest plus half of your Social Security benefit, and compare it to a set of thresholds.
+
+- Below the first threshold, none of the benefit is taxable.
+- Between the two, up to 50% becomes taxable.
+- Above the second, up to 85% becomes taxable.
+
+No more than 85% of the benefit is ever taxable, so it always gets better treatment than an IRA withdrawal.
+
+!!! note "These thresholds do not move"
+    The provisional income thresholds are fixed in statute and have never been indexed for inflation. Every year of raises and every cost of living adjustment pushes more retirees over lines that were drawn decades ago. They are reference data the model has to maintain, and they change only when Congress changes them.
+
+This creates what is often called the tax torpedo. Inside the phase-in range, one more dollar pulled from a traditional IRA does not just get taxed itself, it also drags up to another 85 cents of Social Security into taxable income. A retiree who thinks they are in the 22% bracket is really paying about 41% on that dollar, and someone in the 12% bracket is paying about 22%. This is the clearest example on this page of why the marginal rate that matters is the one on your next dollar, not the one on your bracket, and it is a large part of why withdrawal sourcing has to be solved rather than guessed.
+
+Married households need the survivor case modeled explicitly. When the first spouse dies, the household keeps the larger of the two benefits and loses the smaller one entirely. That happens in the same year the survivor drops to single filer brackets, so income falls and the tax rate on what remains goes up. Delaying the higher earner's claim to 70 is often less about that person and more about locking in the largest possible benefit for whoever lives longer.
+
+### Plan Calculation Engine
+
+The plan calculation engine should answer several questions for the participants.
+
+- **Plan Viability**: Will you always have enough money based on your estimated budget? At what confidence is that calculated?
+- **Maximum Spending Thresholds**: How much can I spend? Can I reasonably spend more than I have budgeted?
+- **Immediate Retirement**: If I retired tomorrow, what would the maximum spending look like over the plan lifetime?
+
+#### Decisions and Constraints
+
+The plan also requires optimizations for the following aspects:
+
+- Withdrawal Sourcing (which accounts to draw from, and in what order)
+    - In taxable accounts, lot ordering is also a solvable constraint
+- Social Security Claiming Age (between 62 and 70, for each participant)
+    - This should take into account total social security value and spousal claims
+- Roth Conversion Optionality (if so, how much to convert, when and what tax impact would it have)
+- How to minimize lifetime tax payments across all tax types
 
 #### Stress Testing
 
-- Monte Carlo
-- Historicals
+The plan should be stress tested against all of the following scenarios:
+
+- Monte Carlo - 10,000 runs
+- Historicals - Use historical data from recent market crashes
+    - Global Financial Crisis (GFC) 2007-2009
+    - COVID-19 Pandemic Crash 2020
+    - 2022 Inflation & Rate Hike Bear Market
+    - 2018 Trade & Rate Scare
 
 ### Reports
 
 - What do I need to do this year?
 - What do I need to do over the next 3 years?
 - What does my year by year financial projection look like?
+    - year, ages, spending, returns, portfolio
