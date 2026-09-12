@@ -331,4 +331,47 @@ Because APTCs are based on an advance *estimate* of your annual income, your act
 * **If you earned less than estimated:** You will receive the remaining credit balance as part of your tax refund.
 * **If you earned more than estimated:** You may have to repay some or all of the excess tax credits you received.
 
+## What is a Max Safe Withdrawal Rate (SWR) Search?
+
+A **Maximum Safe Withdrawal Rate (MSWR) Search** is an iterative computational method used in decumulation and retirement planning. Instead of picking an arbitrary annual withdrawal percentage (like the traditional 4% rule) and testing whether a portfolio survives, an SWR search works in reverse: it programmatically searches across a range of withdrawal rates to determine the exact maximum percentage a retiree can withdraw annually while maintaining a target probability of success (typically 80% to 90% or higher) over a specific time horizon.
+
+In a Monte Carlo framework, the algorithm runs hundreds or thousands of simulated market paths for a candidate withdrawal rate, measures the percentage of paths where the portfolio balance remains above zero at the end of the horizon, and adjusts the rate up or down until it converges on your target success threshold.
+
+---
+
+### Why It Matters in Retirement Engineering
+
+Static rules of thumb fail to account for individual client constraints, asset allocations, fee structures, and market regimes. An iterative SWR search solves three critical problems:
+
+* **Eliminates Trial-and-Error:** Rather than forcing a user or financial planner to manually guess and test different withdrawal figures (e.g., testing 4.0%, then 4.2%, then 4.5%), the algorithm automates the optimization loop to isolate the exact boundary curve.
+* **Customizes to Specific Risk Tolerances:** A retiree willing to accept an 80% success probability (relying on dynamic spending cuts if markets plunge) can extract a significantly higher starting income than one who demands a 95% survival threshold. SWR optimization quantifies this trade-off precisely.
+* **Adapts to Non-Standard Horizons and Taxes:** The classic 4% rule was derived for a 30-year horizon with a standard 60/40 asset allocation. For early retirees (FIRE community) facing 40- to 50-year horizons, or investors with fee-heavy portfolios or taxable account drag, an SWR search recalculates the viable baseline from scratch.
+
+---
+
+### Industry Standards & Practical Implementation
+
+When financial engines, robo-advisors, and institutional wealth planning tools implement SWR searches, they follow established industry standards around search efficiency, statistical precision, and behavioral guardrails:
+
+#### 1. Numerical Search Algorithms
+
+* **Bisection Search (Binary Search):** The industry standard for root-finding in financial simulations. Because portfolio survival probability is a monotonic function (higher withdrawal rates strictly decrease or maintain survival probability), a bisection search eliminates half the remaining search space with each iteration. It reaches 0.1% precision in just 6 to 8 steps, compared to 15+ steps for a step-wise search.
+* **Secant / Newton-Raphson Methods:** Used in high-performance institutional engines. These leverage the slope of failure rates to converge in 3 to 4 steps, though they require smooth boundary conditions to avoid overshooting.
+
+#### 2. Variance Reduction & Variance Control
+
+* **Fixed Random Seeds / Shared Common Random Numbers (CRN):** A critical technical standard. If fresh pseudo-random sequences are generated for every tested rate step, sampling noise can cause non-monotonic anomalies (e.g., a 5.1% rate showing a higher success rate than 5.0%). Industry tools generate a fixed matrix of market return paths *once* per user session and run every withdrawal candidate against that exact same matrix.
+* **Latin Hypercube Sampling (LHS):** Preferred over pure pseudo-random Monte Carlo sampling because it evenly covers the tail ends of return distributions with far fewer total runs (e.g., 2,000 runs with LHS often achieves the convergence stability of 10,000 pure Monte Carlo runs).
+
+#### 3. Simulation Parameters & Success Metrics
+
+* **Sample Size ($N$):** Standard production tools use between 5,000 and 10,000 iterations per search step to ensure the success probability estimate has a standard error of 0.5%.
+* **Failure Threshold Definitions:**
+* **Capital Preservation:** Failure is defined as the portfolio reaching 0 before year T.
+* **Target Terminal Wealth:** In legacy planning, failure is defined as falling below a specific legacy target (e.g., ending inflation-adjusted balance equal to the starting principal).
+
+* **Incorporating Dynamic Rules:** While pure SWR searches test fixed real withdrawals (inflation-adjusted initial dollar amount), modern institutional engines overlay dynamic rules (e.g., Guyton-Klinger guardrails or Variable Percentage Withdrawals) within the loop to search for maximum starting rates under conditional spending cuts.
+
+---
+
 Now that we understand the concepts, let's move on to the [plan](plan.md). 

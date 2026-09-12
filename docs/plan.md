@@ -202,6 +202,8 @@ The plan calculation engine should answer several questions for the participants
 
 ### Decisions and Constraints
 
+The plan should start with fixed & guaranteed income such as Social Security benefits, fixed pensions, and annuity payouts. Once those are filled in for the projected years, then the gaps in needed income can be filled from the other sources. 
+
 The plan also requires optimizations for the following aspects:
 
 - Withdrawal Sourcing (which accounts to draw from, and in what order)
@@ -209,6 +211,8 @@ The plan also requires optimizations for the following aspects:
 - Social Security Claiming Age (between 62 and 70, for each participant)
     - This should take into account total social security value and spousal claims
 - Roth Conversion Optionality (if so, how much to convert, when and what tax impact would it have)
+    - The only reason to perform roth conversions in years prior to Medicare would be that the tax savings from the roth conversions as it related to potential RMDs later in retirement would be greater than the ACA subsidy, or if the ACA subsidy was simply not attainable due to other fixed income streams or unavailable income sources that didn't impact MAGI. 
+    - Performing roth conversions between medicare age and RMD age are feasible up to filling the tax bracket that would be less than the potential forced tax bracket during RMD times. Converting at 22% when the RMDs will be at 22% doesn't make sense.   
 - How to minimize lifetime tax payments across all tax types
 
 ### Stress Testing
